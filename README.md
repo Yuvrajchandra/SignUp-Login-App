@@ -20,11 +20,10 @@ npm install
 nodemon server.js
 ```
 
-Code is Running on 
+Code is Running on
 + http://localhost:3000/
 
 ### To checkout live
-<a href="https://nodejs-register-login-app.herokuapp.com" target="_blank">https://nodejs-register-login-app.herokuapp.com</a>
+<a href="https://login-signup-app-nodejs.herokuapp.com/" target="_blank">https://login-signup-app-nodejs.herokuapp.com/</a>
 
 :heart_eyes: Thanks
-
