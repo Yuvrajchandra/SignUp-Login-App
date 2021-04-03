@@ -7,7 +7,8 @@
 	</script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="./css/main.css">
-
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<meta name="google-signin-client_id" content="399619002016-0lj36pksoaecctk0kjaikt522gsh47cp.apps.googleusercontent.com">
 	<script type="text/javascript">
 		$(document).ready( () => {
 
@@ -39,12 +40,21 @@
 			});
 
 		});
+		function onSignIn(googleUser) {
+		  var profile = googleUser.getBasicProfile();
+		  alert('ID: ' + profile.getId() + '\nName: ' + profile.getName() + '\nImage URL: ' + profile.getImageUrl() + '\nEmail: ' + profile.getEmail()); // Do not send to your backend! Use an ID token instead.
+		  // alert('Name: ' + profile.getName());
+		  // alert('Image URL: ' + profile.getImageUrl());
+		  // alert('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
+	  }
 	</script>
 </head>
 <body>
 	<div>
 		<img src="./Stige.jpg">
 	</div>
+
 	<div class="col-md-4 col-md-offset-4 form-card">
 		<div>
 			<p class="login">Sign In</p>
@@ -53,9 +63,10 @@
 			<form id="form" method="post" >
 				<input type="text" name="email" placeholder="E-mail" required="" class="form-control"><br/>
 				<input type="password" name="password" placeholder="Password" required="" class="form-control"><br/>
-				<input type="submit" value="Login" class="btn btn-success">
+				<input type="submit" value="Login" class="btn btn-success register">
 			</form>
 		</div>
+		<div class="g-signin2" data-onsuccess="onSignIn"></div>
 		<div class="mssg bg-danger">
 			<span id="check" ></span>
 		</div>
